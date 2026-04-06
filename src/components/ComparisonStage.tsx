@@ -169,8 +169,8 @@ export default function ComparisonStage({
   return (
     <div className="w-full max-w-5xl mx-auto space-y-12 py-8 px-4 relative">
       
-      {/* Header Sticky Action Area */}
-      <div className="sticky top-20 z-40 flex items-center justify-center gap-6 pb-12 pt-2 pointer-events-none">
+      {/* Header Action Area (Standard Flow) */}
+      <div className="flex items-center justify-center gap-6 pb-12 pt-2">
          
          {/* Left Side Action: Add More */}
          {!isCartSwapped && (
@@ -179,7 +179,7 @@ export default function ComparisonStage({
              whileTap={{ scale: 0.9 }}
              transition={{ type: "spring", stiffness: 400, damping: 12 }}
              onClick={() => window.dispatchEvent(new CustomEvent('eco-cart-navigate', { detail: 'searching' }))}
-             className="px-8 py-4 rounded-3xl font-black bg-white/5 backdrop-blur-2xl text-white border border-white/10 shadow-xl pointer-events-auto flex items-center gap-3 transition-all glass neon-glow-white"
+             className="px-8 py-4 rounded-3xl font-black bg-white/5 backdrop-blur-2xl text-white border border-white/10 shadow-xl flex items-center gap-3 transition-all glass neon-glow-white"
            >
              <span className="text-xl">➕</span>
              <span className="tracking-tight">Add Items</span>
@@ -193,7 +193,7 @@ export default function ComparisonStage({
             transition={{ type: "spring", stiffness: 400, damping: 12 }}
             onClick={handleBulkSwap}
             disabled={isCartSwapped}
-            className={`px-14 py-7 rounded-full font-black text-2xl pointer-events-auto transition-all duration-500 flex items-center gap-5 border-2 glass ${
+            className={`px-14 py-7 rounded-full font-black text-2xl transition-all duration-500 flex items-center gap-5 border-2 glass ${
               isCartSwapped 
                 ? "bg-white/5 text-white/30 border-white/5 cursor-default grayscale" 
                 : "bg-neon-g/20 text-white border-neon-g cursor-pointer neon-glow-green"
@@ -222,7 +222,7 @@ export default function ComparisonStage({
                  window.dispatchEvent(new CustomEvent('eco-cart-reset'));
                }
              }}
-             className="px-8 py-4 rounded-3xl font-black bg-black/40 backdrop-blur-2xl text-white border border-neon-o/40 shadow-xl pointer-events-auto flex items-center gap-3 transition-all glass neon-glow-red"
+             className="px-8 py-4 rounded-3xl font-black bg-black/40 backdrop-blur-2xl text-white border border-neon-o/40 shadow-xl flex items-center gap-3 transition-all glass neon-glow-red"
            >
              <span className="text-xl">🗑️</span>
              <span className="tracking-tight text-white/90">Reset</span>
